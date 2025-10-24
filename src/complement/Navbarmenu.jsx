@@ -7,7 +7,7 @@ const Navbarmenu = () => {
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
         <NavLink
           to="/"
-          className="text-xl font-semibold tracking-tight text-gray-800 hover:text-black transition-colors"
+          className="text-xl font-semibold tracking-tight text-gray-800 hover:text-black transition-colors duration-300 ease-in-out"
         >
           <span className="text-gray-500">Rachel.Portfolio</span>
         </NavLink>
@@ -17,17 +17,17 @@ const Navbarmenu = () => {
             end
             className={({ isActive }) =>
               `text-sm tracking-wide ${
-                isActive ? "text-black font-medium" : "text-gray-600 hover:text-black"
+                isActive ? "text-black font-medium" : "text-gray-600 hover:text-black duration-300 ease-in-out"
               } transition-colors`
             }
           >
             Home
           </NavLink>
           <NavLink
-            to="/about"
+            to="https://x.com/Adamjim15"
             className={({ isActive }) =>
               `text-sm tracking-wide ${
-                isActive ? "text-black font-medium" : "text-gray-600 hover:text-black"
+                isActive ? "text-black font-medium" : "text-gray-600 hover:text-black duration-300 ease-in-out"
               } transition-colors`
             }
           >
@@ -38,7 +38,7 @@ const Navbarmenu = () => {
             to="/projects"
             className={({ isActive }) =>
               `text-sm tracking-wide ${
-                isActive ? "text-black font-medium" : "text-gray-600 hover:text-black"
+                isActive ? "text-black font-medium" : "text-gray-600 hover:text-black duration-300 ease-in-out"
               } transition-colors`
             }
           >
@@ -49,7 +49,7 @@ const Navbarmenu = () => {
             to="/contact"
             className={({ isActive }) =>
               `text-sm tracking-wide ${
-                isActive ? "text-black font-medium" : "text-gray-600 hover:text-black"
+                isActive ? "text-black font-medium" : "text-gray-600 hover:text-black duration-300 ease-in-out"
               } transition-colors`
             }
           >
