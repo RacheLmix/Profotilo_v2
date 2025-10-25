@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { Link } from "react-scroll";
 import TargetCursor from "../hook/TargetCursor";
 const Navbarmenu = () => {
     return (
@@ -27,25 +28,29 @@ const Navbarmenu = () => {
                         >
                             Home
                         </NavLink>
-                        <NavLink
-                            to="https://x.com/Adamjim15"
-                            className={({ isActive }) =>
-                                `text-sm tracking-wide ${isActive ? "text-black font-medium" : "text-gray-600 hover:text-black duration-300 ease-in-out"
-                                } transition-colors cursor-target`
-                            }
+
+                        <Link
+                            to="profile"
+                            smooth={true}
+                            duration={500}
+                            spy={true}
+                            activeClass="text-black font-medium"
+                            className="text-sm tracking-wide text-gray-600 duration-300 ease-in-out transition-colors cursor-target"
                         >
                             About
-                        </NavLink>
+                        </Link>
 
-                        <NavLink
-                            to="/projects"
-                            className={({ isActive }) =>
-                                `text-sm tracking-wide ${isActive ? "text-black font-medium" : "text-gray-600 hover:text-black duration-300 ease-in-out"
-                                } transition-colors cursor-target`
-                            }
+                        <Link
+                            to="projects"
+                            smooth={true}
+                            duration={500}
+                            spy={true}
+                            offset={-80}
+                            activeClass="text-black font-medium"
+                            className="text-sm tracking-wide text-gray-600 duration-300 ease-in-out transition-colors cursor-target"
                         >
                             Projects
-                        </NavLink>
+                        </Link>
 
                         <NavLink
                             to="/contact"

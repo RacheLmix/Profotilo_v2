@@ -19,9 +19,12 @@ const Mainunalcv = () => {
             <div className="w-full md:w-1/2 space-y-4 text-center md:text-left">
                 <h1 className="text-4xl font-bold">Profile Rachel</h1>
 
-                <p className="text-gray-700 max-w-md cursor-target">
-                    Hi, my name is <span className="font-semibold">Luminous</span>.
-                    I use most AI engines and build applications that merge creativity with intelligence.
+                <p className="text-gray-700 w-[720px] cursor-target">
+                    Hi, my name is <span className="font-semibold">Rachel</span> (
+                    Bồ Tùng Dương) is a Web Development student at FPT Polytechnic, specializing in Backend Development,
+                    with a high GPA of 3.65/4.0. His goal is to become a skilled Backend Developer, optimizing effective and secure web systems.
+                    He is proficient in JavaScript, PHP, Python, and Laravel. He has practical experience as a Development Member in a Laravel-based Graduation Project
+                    (food website) and led a HomeStay booking website project. He is also an active member of the Discord developer community
                 </p>
 
                 <div>

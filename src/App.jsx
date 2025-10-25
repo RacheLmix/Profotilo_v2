@@ -13,14 +13,18 @@ function App() {
   }, []);
   return (
     <>
-    {/* <CustomCursor /> */}
-     <Navbarmenu />
+      {/* <CustomCursor /> */}
+      <Navbarmenu />
       <main className="p-6">
         <MainPro />
-        <HookMaluaText />
-        <Mainunalcv />
-        <HookProjects />
-        <MainProjects />
+        <section id='profile'>
+          <HookMaluaText />
+          <Mainunalcv />
+        </section>
+        <section id='projects'>
+          <HookProjects />
+          <MainProjects />
+        </section>
       </main>
     </>
   )
