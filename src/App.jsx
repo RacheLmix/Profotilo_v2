@@ -25,9 +25,6 @@ function App() {
           <HookProjects />
           <MainProjects />
         </section>
-        {/* <section id='contact'>
-          <ManualEnginer />
-        </section> */}
       </main>
     </>
   )

@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { FaTiktok, FaFacebookF, FaInstagram, FaWeixin, FaXTwitter } from "react-icons/fa6";
 import { motion, useMotionValue, useTransform } from "framer-motion";
-
 const textVariant = {
     hidden: { opacity: 0, y: 30 },
     visible: (delay = 0) => ({
