@@ -1,16 +1,64 @@
-# React + Vite
+# 🚀 React + Vite Starter Template
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A minimal, high-performance setup for building **React applications** with [Vite](https://vitejs.dev/).  
+Includes **HMR (Hot Module Replacement)**, recommended ESLint rules, and optional TypeScript support.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🎬 Demo
 
-## React Compiler
+Showcase your project with a GIF or video:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+![Demo GIF](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMzZ6bGpjZTlkc2p3bGc0eGRtNmRkZzUweGMyaGE5N2tqbXQ4OTgyaCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/zaAwMUtdvrWXnWubhU/giphy.gif)
+---
 
-## Expanding the ESLint configuration
+## ⚡ Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **React 18** with hooks and concurrent features
+- **Vite** for blazing-fast dev server and optimized builds
+- **ESLint** configured with best practices
+- **HMR** for instant updates during development
+- Optional **TypeScript support** for type safety
+
+---
+
+## 🧩 Supported Plugins
+
+| Plugin | Compiler | Notes |
+|--------|----------|-------|
+| [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react) | Babel | Standard Fast Refresh |
+| [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) | SWC | High-performance Fast Refresh |
+
+> ⚠️ **React Compiler** is not enabled by default due to performance impact.  
+> Learn more: [React Compiler Installation](https://react.dev/learn/react-compiler/installation)
+
+---
+
+## 🛠 ESLint & TypeScript
+
+For production-ready apps:
+
+- Use **TypeScript** for safer code
+- Enable **type-aware ESLint rules** via [`typescript-eslint`](https://typescript-eslint.io)  
+- Check out the [React + TS Vite template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts)
+
+---
+
+## 🚀 Getting Started
+
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/react-vite-template.git
+cd react-vite-template
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Lint your code
+npm run lint
