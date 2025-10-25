@@ -14,9 +14,8 @@ function App() {
   }, []);
   return (
     <>
-      {/* <CustomCursor /> */}
       <Navbarmenu />
-      <main className="p-6">
+      <main className="p-6 m-0 min-h-screen">
         <MainPro />
         <section id='profile'>
           <HookMaluaText />
@@ -26,9 +25,9 @@ function App() {
           <HookProjects />
           <MainProjects />
         </section>
-        <section id='contact'>
+        {/* <section id='contact'>
           <ManualEnginer />
-        </section>
+        </section> */}
       </main>
     </>
   )
