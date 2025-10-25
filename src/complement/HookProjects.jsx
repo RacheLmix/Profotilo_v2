@@ -1,12 +1,10 @@
-import TextPressure from "./TextPressure";
-
 import React from 'react'
-
-const HookMaluaText = () => {
+import TextPressure from "./TextPressure";
+const HookProjects = () => {
     return (
         <div className="mt-20" style={{ position: 'relative', height: '300px' }}>
             <TextPressure
-                text="WELL COME TO PROFILE RACHEL"
+                text="WELL COME TO MY PROJECTS"
                 flex={true}
                 alpha={false}
                 stroke={true}
@@ -21,4 +19,4 @@ const HookMaluaText = () => {
     )
 }
 
-export default HookMaluaText
+export default HookProjects
