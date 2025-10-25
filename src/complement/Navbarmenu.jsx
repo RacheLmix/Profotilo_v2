@@ -1,23 +1,39 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { Link } from "react-scroll";
+import { motion } from "framer-motion";
 import TargetCursor from "../hook/TargetCursor";
+
 const Navbarmenu = () => {
     return (
-        <div>
-            <TargetCursor
-                spinDuration={2}
-                hideDefaultCursor={true}
-            />
+        <motion.div
+            initial={{ y: -50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+        >
+            <TargetCursor spinDuration={2} hideDefaultCursor={true} />
+
             <nav className="fixed top-0 left-0 w-full bg-white/80 backdrop-blur-md border-b border-gray-200 z-50">
                 <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-                    <NavLink
-                        to="/"
-                        className="text-xl font-semibold tracking-tight cursor-target text-gray-800 hover:text-black transition-colors duration-300 ease-in-out"
+                    <motion.div
+                        initial={{ opacity: 0, y: -10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.2 }}
                     >
-                        <span className="text-gray-500">Rachel.Portfolio</span>
-                    </NavLink>
-                    <div className="hidden md:flex space-x-8">
+                        <NavLink
+                            to="/"
+                            className="text-xl font-semibold tracking-tight cursor-target text-gray-800 hover:text-black transition-colors duration-300 ease-in-out"
+                        >
+                            <span className="text-gray-500">Rachel.Portfolio</span>
+                        </NavLink>
+                    </motion.div>
+
+                    <motion.div
+                        className="hidden md:flex space-x-8"
+                        initial={{ opacity: 0, y: -10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.7, delay: 0.4 }}
+                    >
                         <NavLink
                             to="/"
                             end
@@ -61,10 +77,10 @@ const Navbarmenu = () => {
                         >
                             Contact
                         </NavLink>
-                    </div>
+                    </motion.div>
                 </div>
             </nav>
-        </div>
+        </motion.div>
     );
 };
 
