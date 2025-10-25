@@ -7,6 +7,7 @@ import CustomCursor from './complement/CustomCursor.jsx';
 import Mainunalcv from './complement/Mainunalcv.jsx';
 import HookProjects from './complement/HookProjects.jsx';
 import MainProjects from './complement/MainProjects.jsx';
+import ManualEnginer from './complement/ManualEnginer.jsx';
 function App() {
   useEffect(() => {
     document.title = "Rachel Portfolio";
@@ -24,6 +25,9 @@ function App() {
         <section id='projects'>
           <HookProjects />
           <MainProjects />
+        </section>
+        <section id='contact'>
+          <ManualEnginer />
         </section>
       </main>
     </>
