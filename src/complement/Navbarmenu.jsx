@@ -77,6 +77,16 @@ const Navbarmenu = () => {
                         >
                             Contact
                         </NavLink>
+
+                        <NavLink
+                            to="/tiktokdownloader"
+                            className={({ isActive }) =>
+                                `text-sm tracking-wide ${isActive ? "text-black font-medium" : "text-gray-600 hover:text-black duration-300 ease-in-out"
+                                } transition-colors cursor-target`
+                            }
+                        >
+                            TikTok_Download
+                        </NavLink>
                     </motion.div>
                 </div>
             </nav>
