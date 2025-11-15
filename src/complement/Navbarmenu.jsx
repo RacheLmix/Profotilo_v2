@@ -1,10 +1,10 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { Link } from "react-scroll";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import TargetCursor from "../hook/TargetCursor";
 
-const Navbarmenu = () => {
+const Navbarmenu = ({ isDark, setIsDark }) => {
     return (
         <motion.div
             initial={{ y: -50, opacity: 0 }}
@@ -87,6 +87,7 @@ const Navbarmenu = () => {
                         >
                             TikTok_Download
                         </NavLink>
+                        
                     </motion.div>
                 </div>
             </nav>

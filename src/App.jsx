@@ -9,23 +9,27 @@ import HookProjects from './complement/HookProjects.jsx';
 import MainProjects from './complement/MainProjects.jsx';
 import ManualEnginer from './complement/ManualEnginer.jsx';
 function App() {
+  const [isDark, setIsDark] = useState(false);
+
   useEffect(() => {
     document.title = "Rachel Portfolio";
   }, []);
   return (
     <>
-      <Navbarmenu />
-      <main className="p-6 m-0 min-h-screen">
-        <MainPro />
-        <section id='profile'>
-          <HookMaluaText />
-          <Mainunalcv />
-        </section>
-        <section id='projects'>
-          <HookProjects />
-          <MainProjects />
-        </section>
-      </main>
+      <div className={`${isDark ? 'bg-gray-900 text-white' : 'bg-white text-black'} transition-colors duration-500 min-h-screen`}>
+        <Navbarmenu isDark={isDark} setIsDark={setIsDark} />
+        <main className="p-6 m-0 min-h-screen">
+          <MainPro />
+          <section id='profile'>
+            <HookMaluaText />
+            <Mainunalcv />
+          </section>
+          <section id='projects'>
+            <HookProjects />
+            <MainProjects />
+          </section>
+        </main>
+      </div>
     </>
   )
 }

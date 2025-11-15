@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { FaTiktok, FaFacebookF, FaInstagram, FaWeixin, FaXTwitter } from "react-icons/fa6";
+import { FaTiktok, FaFacebookF, FaInstagram, FaWeixin, FaXTwitter, FaDiscord } from "react-icons/fa6";
 import { motion, useMotionValue, useTransform } from "framer-motion";
 const textVariant = {
     hidden: { opacity: 0, y: 30 },
@@ -13,12 +13,10 @@ const textVariant = {
 const MainPro = () => {
     return (
         <section className="relative flex flex-col md:flex-row items-center justify-center min-h-screen w-full text-white overflow-hidden">
-            {/* Vầng sáng nền */}
             <div className="absolute inset-0 flex justify-center items-center">
                 <div className="w-[90px] h-[90px] bg-purple-300/20 blur-[650px] rounded-full"></div>
             </div>
 
-            {/* Cột trái */}
             <motion.div
                 className="z-10 flex flex-col items-center md:items-end text-center md:text-right px-8 md:px-12 ml-[90px]"
                 initial="hidden"
@@ -99,10 +97,10 @@ const MainPro = () => {
                 transition={{ delay: 1.2, duration: 0.8 }}
             >
                 {[
-                    { icon: <FaTiktok />, link: "https://www.tiktok.com" },
-                    { icon: <FaXTwitter />, link: "https://x.com" },
-                    { icon: <FaFacebookF />, link: "https://facebook.com" },
-                    { icon: <FaInstagram />, link: "https://instagram.com" },
+                    { icon: <FaTiktok />, link: "https://www.tiktok.com/@rachel002_lux" },
+                    { icon: <FaXTwitter />, link: "https://x.com/Adamjim15" },
+                    { icon: <FaFacebookF />, link: "https://www.facebook.com/Luminous.002" },
+                    // { icon: <FaDiscord />, link: "https://discord.com/757212511186714724" },
                     { icon: <FaWeixin />, link: "https://wechat.com" },
                 ].map((item, i) => (
                     <motion.a
