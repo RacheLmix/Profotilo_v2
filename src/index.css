@@ -3,3 +3,31 @@
 .custom-shadow {
     filter: drop-shadow(0 25px 15px rgba(0, 0, 0, 7));
 }
+
+@layer utilities {
+  /* TẤT CẢ card bị blur (không đổi shadow) */
+  .projects-wrapper:hover .card {
+    filter: blur(8px);
+    opacity: 0.45;
+    transform: scale(0.96);
+    transition:
+      filter 0.45s cubic-bezier(0.25, 1, 0.25, 1),
+      opacity 0.45s cubic-bezier(0.25, 1, 0.25, 1),
+      transform 0.45s cubic-bezier(0.25, 1, 0.25, 1);
+    will-change: filter, opacity, transform;
+  }
+
+  /* CHỈ CARD ĐANG HOVER — sáng, scale nhẹ, có drop-shadow */
+  .projects-wrapper:hover .card:hover {
+    filter: blur(0);
+    opacity: 1;
+    transition:
+      filter 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+      opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+      box-shadow 0.45s ease-in-out;
+
+    /* Đây là drop-shadow của card hover */
+    box-shadow: 0 55px 55px rgba(0,0,0,0.35);
+  }
+}

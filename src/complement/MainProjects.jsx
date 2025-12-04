@@ -68,7 +68,7 @@ const MainProjects = () => {
   ]
 
   return (
-    <div ref={ref} className="flex flex-wrap justify-center gap-5 p-0">
+    <div ref={ref} className="projects-wrapper flex flex-wrap justify-center gap-5 p-0">
       {projects.map((project, i) => (
         <motion.div
           key={i}

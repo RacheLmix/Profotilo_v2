@@ -55,7 +55,7 @@
 }
 
 .card:hover {
-  transform: translateY(-10px) rotateX(6deg) rotateY(-4deg) scale(1.04);
+  transform: translateY(-20px) rotateX(6deg) rotateY(-10deg) scale(1.04);
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15);
 }
 
