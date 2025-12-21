@@ -20,7 +20,7 @@ const HookMaluaText = () => {
                     weight={true}
                     italic={true}
                     textColor="black"
-                    strokeColor="#CC99FF"
+                    strokeColor="#FAACEB"
                     minFontSize={36}
                 />
             </motion.div>

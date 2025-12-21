@@ -50,7 +50,7 @@ const Mainunalcv = () => {
                     viewport={{ once: true }}
                 >
                     Hi, my name is <span className="font-semibold">Rachel</span> (
-                    Bồ Tùng Dương ) is a Web Development student at FPT Polytechnic, specializing in Backend Development,
+                    Tùng Dương ) is a Web Development, specializing in Backend Development,
                     with a high GPA of 3.65/4.0. His goal is to become a skilled Backend Developer, optimizing effective and secure web systems.
                     He is proficient in JavaScript, PHP, Python, and Laravel. He has practical experience as a Development Member in a Laravel-based Graduation Project
                     (food website) and led a HomeStay booking website project. He is also an active member of the Discord developer community
