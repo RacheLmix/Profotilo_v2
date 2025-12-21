@@ -100,7 +100,7 @@ const MainPro = () => {
                     { icon: <FaTiktok />, link: "https://www.tiktok.com/@rachel002_lux" },
                     { icon: <FaXTwitter />, link: "https://x.com/Adamjim15" },
                     { icon: <FaFacebookF />, link: "https://www.facebook.com/Luminous.002" },
-                    { icon: <FaDiscord />, link: "https://discord.com/users/@luminous.0.0.2" },
+                    { icon: <FaDiscord />, link: "https://discord.com/users/757212511186714724" },
                     { icon: <FaWeixin />, link: "https://wechat.com" },
                 ].map((item, i) => (
                     <motion.a
