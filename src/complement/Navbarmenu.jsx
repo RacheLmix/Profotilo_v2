@@ -78,7 +78,7 @@ const Navbarmenu = ({ isDark, setIsDark }) => {
                             Contact
                         </NavLink>
 
-                        <NavLink
+                        {/* <NavLink
                             to="/tiktokdownloader"
                             className={({ isActive }) =>
                                 `text-sm tracking-wide ${isActive ? "text-black font-medium" : "text-gray-600 hover:text-black duration-300 ease-in-out"
@@ -86,7 +86,7 @@ const Navbarmenu = ({ isDark, setIsDark }) => {
                             }
                         >
                             TikTok_Download
-                        </NavLink>
+                        </NavLink> */}
                         
                     </motion.div>
                 </div>

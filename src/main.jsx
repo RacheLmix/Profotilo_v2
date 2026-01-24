@@ -10,8 +10,9 @@ const App = React.lazy(() => import('./App.jsx'))
 const router = createBrowserRouter([
   { path: "/", element: <App /> },
   { path: "*", element: <NotFound /> },
-  { path: "/tiktokdownloader", element: <Snaptik /> },
+  // { path: "/tiktokdownloader", element: <Snaptik /> },
 ]);
+
 createRoot(document.getElementById('root')).render(
   <Suspense fallback={<Loading />}>
     <RouterProvider router={router} />
