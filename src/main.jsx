@@ -6,7 +6,7 @@ import NotFound from './page/NotFound.jsx'
 import Snaptik from './page/Snaptik.jsx'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Loading from './page/Loading.jsx'
-import ProjectDetails from './complement/ProjectDetails.jsx'
+
 
 const App = React.lazy(() =>
   Promise.all([
