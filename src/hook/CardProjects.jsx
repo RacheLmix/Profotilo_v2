@@ -4,9 +4,9 @@ import TargetCursor from './TargetCursor'
 import { useNavigate } from 'react-router'
 const CardProjects = ({ id, slug, image, title, description }) => {
   const navigate = useNavigate()
-  const handchangedetails = () => {
-    navigate(`/detail/${id}`)
-  }
+  // const handchangedetails = () => {
+  //   navigate(`/detail/${id}`)
+  // }
   return (
     <>
       <TargetCursor
@@ -24,7 +24,7 @@ const CardProjects = ({ id, slug, image, title, description }) => {
             <p>
               {description}
             </p>
-            <button onClick={handchangedetails}>Detail Project</button>
+            <button>Detail Project</button>
           </div>
         </div>
       </div>
