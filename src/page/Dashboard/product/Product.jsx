@@ -34,6 +34,8 @@ function Product() {
   });
 
   const [file, setFile] = useState(null);
+  const [isEditing, setIsEditing] = useState(false);
+  const [editId, setEditId] = useState(null);
 
 
   const handleChange = (e) => {
@@ -54,11 +56,19 @@ function Product() {
         formData.append("thumbnail", file);
       }
 
-      const response = await api.post("/projects/product", formData);
-      sileo.success({ title: "Created success" });
+      if (isEditing) {
+        await api.put(`/projects/product/${editId}`, formData);
+        sileo.success({ title: "Updated success" });
+      } else {
+        await api.post("/projects/product", formData);
+        sileo.success({ title: "Created success" });
+      }
+
+      handleCancel();
+      fetchprojects();
     } catch (err) {
       sileo.error({
-        title: "Error created",
+        title: isEditing ? "Error updating" : "Error created",
         description: err?.response?.data?.message,
       });
     }
@@ -74,6 +84,7 @@ function Product() {
           try {
             const respones1 = await api.delete(`/projects/product/${id}`);
             sileo.success({ title: "Detele success" });
+            fetchprojects(); // Refresh list after delete
           } catch (err) {
             sileo.error({
               title: "Error Deleted",
@@ -83,6 +94,35 @@ function Product() {
         },
       },
     });
+  };
+
+  const handleEdit = (project) => {
+    setIsEditing(true);
+    setEditId(project.id);
+    SetDataForm({
+      title: project.title,
+      description: project.description,
+      link_project: project.link_project || "",
+      url_video: project.url_video || "",
+    });
+    setFile(null);
+
+    // Scroll to the bottom of the page assuming the form is there
+    window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+  };
+
+  const handleCancel = () => {
+    setIsEditing(false);
+    setEditId(null);
+    SetDataForm({
+      title: "",
+      description: "",
+      link_project: "",
+      url_video: "",
+    });
+    setFile(null);
+    // Reset file input tag if we had access to the ref, 
+    // but the best way is usually letting user override or handle using controlled states
   };
 
   useEffect(() => {
@@ -142,9 +182,14 @@ function Product() {
                   <td>{project?.description.toUpperCase()}</td>
 
                   <td>
-                    <button onClick={() => handleDelete(project.id)}>
-                      Delete
-                    </button>
+                    <div className="product-actions">
+                      <button className="icon-btn edit" onClick={() => handleEdit(project)} title="Edit">
+                        <Edit size={16} color="#0ea5e9" />
+                      </button>
+                      <button className="icon-btn delete" onClick={() => handleDelete(project.id)} title="Delete">
+                        <Trash2 size={16} color="#ef4444" />
+                      </button>
+                    </div>
                   </td>
                 </tr>
               ))}
@@ -161,8 +206,8 @@ function Product() {
 
         <div className="card product-form-card animate-fade-up delay-2">
           <h4 className="form-title">
-            <Plus size={18} />
-            Create Project
+            {isEditing ? <Edit size={18} /> : <Plus size={18} />}
+            {isEditing ? "Edit Project" : "Create Project"}
           </h4>
 
           <form onSubmit={handleSubmit}>
@@ -229,14 +274,14 @@ function Product() {
             </div>
 
             <div className="form-buttons">
-              <button type="button" className="btn-cancel">
+              <button type="button" className="btn-cancel" onClick={handleCancel}>
                 <X size={16} />
                 Cancel
               </button>
 
               <button className="btn-save">
                 <Save size={16} />
-                Save
+                {isEditing ? "Update" : "Save"}
               </button>
             </div>
           </form>
