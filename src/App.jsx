@@ -8,6 +8,7 @@ import Mainunalcv from './complement/Mainunalcv.jsx';
 import HookProjects from './complement/HookProjects.jsx';
 import MainProjects from './complement/MainProjects.jsx';
 import ManualEnginer from './complement/ManualEnginer.jsx';
+import GithubProjects from './complement/GithubProjects.jsx';
 function App() {
   const [isDark, setIsDark] = useState(false);
 
@@ -27,6 +28,9 @@ function App() {
           <section id='projects'>
             <HookProjects />
             <MainProjects />
+          </section>
+          <section id='github'>
+            <GithubProjects />
           </section>
         </main>
       </div>

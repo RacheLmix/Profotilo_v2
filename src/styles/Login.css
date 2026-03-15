@@ -1,0 +1,441 @@
+/* ===== WRAPPER ===== */
+
+.login-wrapper {
+    background-color: #f9fafb;
+    color: #111827;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 100vh;
+    width: 100vw;
+
+    overflow: hidden;
+    position: relative;
+    padding: 1rem;
+}
+
+/* ===== BACKGROUND BLOBS ===== */
+
+.login-bg-decoration {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.login-blob {
+    position: absolute;
+    border-radius: 9999px;
+    background: rgba(229,231,235,0.5);
+    filter: blur(100px);
+    opacity: 0;
+    animation: loginFadeIn .8s ease forwards;
+}
+
+.login-blob-1 {
+    top: -10%;
+    left: -10%;
+    width: 40vw;
+    height: 40vw;
+}
+
+.login-blob-2 {
+    bottom: -10%;
+    right: -10%;
+    width: 35vw;
+    height: 35vw;
+    animation-delay: .3s;
+}
+
+/* ===== CONTAINER ===== */
+
+.login-container {
+    width: 100%;
+    max-width: 400px;
+    position: relative;
+    z-index: 10;
+}
+
+/* ===== HEADER ===== */
+
+.login-header {
+    margin-bottom: 3rem;
+    animation: loginSlideUp .8s cubic-bezier(.16,1,.3,1);
+}
+
+.login-title {
+    font-size: 2rem;
+    font-weight: 300;
+    letter-spacing: -0.02em;
+    margin-bottom: .5rem;
+}
+
+.login-subtitle {
+    color: #6b7280;
+    font-size: 1rem;
+}
+
+/* ===== FORM ===== */
+
+.login-input-group {
+    position: relative;
+    margin-bottom: 2rem;
+    animation: loginSlideUp .8s cubic-bezier(.16,1,.3,1);
+}
+
+/* input */
+
+.login-input {
+
+    width: 100%;
+
+    background: transparent;
+
+    border: none;
+    border-bottom: 1px solid #d1d5db;
+
+    padding: .75rem 0;
+
+    font-size: 1.1rem;
+
+    color: #111827;
+
+    outline: none;
+
+}
+
+/* label */
+
+.login-label {
+
+    position: absolute;
+
+    left: 0;
+    top: .75rem;
+
+    font-size: 1.1rem;
+
+    color: #9ca3af;
+
+    pointer-events: none;
+
+    transition: all .3s cubic-bezier(.16,1,.3,1);
+
+}
+
+/* floating effect */
+
+.login-input:focus ~ .login-label,
+.login-input:not(:placeholder-shown) ~ .login-label {
+
+    transform: translateY(-24px) scale(.85);
+    color: #111827;
+
+}
+
+/* underline animation */
+
+.login-underline {
+
+    position: absolute;
+
+    bottom: 0;
+    left: 0;
+
+    width: 0%;
+    height: 1px;
+
+    background: #111827;
+
+    transition: width .4s ease;
+
+}
+
+.login-input:focus ~ .login-underline {
+    width: 100%;
+}
+
+/* ===== ACTIONS ===== */
+
+.login-actions {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 2.5rem;
+
+    animation: loginSlideUp .8s cubic-bezier(.16,1,.3,1);
+}
+
+/* checkbox */
+
+.login-checkbox-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.login-checkbox-box {
+
+    width: 20px;
+    height: 20px;
+
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.login-checkbox-input {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.login-checkbox-icon {
+
+    width: 12px;
+    height: 12px;
+
+    color: white;
+
+    transform: scale(0);
+    transition: transform .2s;
+
+}
+
+.login-checkbox-bg {
+
+    position: absolute;
+    inset: 0;
+
+    background: #111827;
+
+    transform: scale(0);
+    transition: transform .2s;
+
+}
+
+.login-checkbox-input:checked ~ .login-checkbox-icon {
+    transform: scale(1);
+}
+
+.login-checkbox-input:checked ~ .login-checkbox-bg {
+    transform: scale(1);
+}
+
+.login-remember-text {
+    margin-left: .6rem;
+    font-size: .9rem;
+    color: #6b7280;
+}
+
+/* forgot */
+
+.login-forgot-pass {
+
+    font-size: .9rem;
+
+    color: #6b7280;
+
+    text-decoration: none;
+
+    position: relative;
+
+}
+
+.login-forgot-pass:hover {
+    color: #111827;
+}
+
+.login-forgot-pass::after {
+
+    content: "";
+
+    position: absolute;
+
+    bottom: -2px;
+    left: 0;
+
+    width: 100%;
+    height: 1px;
+
+    background: #111827;
+
+    transform: scaleX(0);
+    transform-origin: right;
+
+    transition: transform .3s;
+
+}
+
+.login-forgot-pass:hover::after {
+
+    transform: scaleX(1);
+    transform-origin: left;
+
+}
+
+/* ===== BUTTON ===== */
+
+.login-btn-container {
+    animation: loginSlideUp .8s cubic-bezier(.16,1,.3,1);
+}
+
+.login-btn {
+
+    width: 100%;
+
+    padding: 1rem;
+
+    background: #111827;
+
+    color: white;
+
+    font-size: 1.1rem;
+    font-weight: 500;
+
+    border-radius: 12px;
+
+    border: none;
+
+    cursor: pointer;
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+.login-btn:hover {
+    box-shadow: 0 10px 15px rgba(17,24,39,.2);
+}
+
+.login-btn:active {
+    transform: scale(.97);
+}
+
+/* shine */
+
+.login-btn-shine {
+
+    position: absolute;
+    inset: 0;
+
+    background: rgba(255,255,255,.2);
+
+    transform: translateY(100%);
+    transition: transform .3s;
+
+}
+
+.login-btn:hover .login-btn-shine {
+    transform: translateY(0);
+}
+
+.login-btn-content {
+
+    position: relative;
+    z-index: 10;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+
+}
+
+.login-btn-icon {
+
+    width: 20px;
+    height: 20px;
+
+    transition: transform .3s;
+
+}
+
+.login-btn:hover .login-btn-icon {
+    transform: translateX(4px);
+}
+
+/* ===== FOOTER ===== */
+
+.login-footer {
+
+    margin-top: 3rem;
+
+    text-align: center;
+
+    color: #6b7280;
+
+    animation: loginSlideUp .8s cubic-bezier(.16,1,.3,1);
+
+}
+
+.login-create-account {
+
+    color: #111827;
+
+    font-weight: 500;
+
+    text-decoration: none;
+
+    margin-left: .3rem;
+
+    position: relative;
+
+}
+
+.login-create-line {
+
+    position: absolute;
+
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 1px;
+
+    background: #111827;
+
+    transform: scaleX(0);
+    transition: transform .3s;
+
+}
+
+.login-create-account:hover .login-create-line {
+    transform: scaleX(1);
+}
+
+/* ===== ANIMATIONS ===== */
+
+@keyframes loginSlideUp {
+
+    0% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+}
+
+@keyframes loginFadeIn {
+
+    0% { opacity:0 }
+
+    100% { opacity:1 }
+
+}

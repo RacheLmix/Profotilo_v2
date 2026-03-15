@@ -1,128 +1,115 @@
+/* Container bọc ngoài */
+.prj-wrapper {
+  /* Biến số */
+  --card-w: 340px;
+  --card-h: 420px;
+  --radius: 24px;
+  --white: #ffffff;
+  --slate-800: #1e293b;
+  --slate-500: #64748b;
+  --slate-100: #f1f5f9;
+  --accent: #5c6b89;
 
-.card-container {
-  position: relative;
   display: inline-block;
-  perspective: 1200px;
+  padding: 20px;
+  position: relative; 
+  z-index: 1; 
 }
 
-.card {
-  position: relative;
-  width: 350px;
-  height: 400px;
-  border-radius: 18px;
+/* Thẻ Card */
+.prj-card {
+  width: var(--card-w);
+  height: var(--card-h);
+  background: var(--white);
+  border-radius: var(--radius);
   overflow: hidden;
-  background: #fff;
-  transition: transform 0.6s cubic-bezier(0.25, 1, 0.3, 1), box-shadow 0.5s ease;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(226, 232, 240, 0.6);
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
   cursor: pointer;
-  transform-style: preserve-3d;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-  will-change: transform;
+  /* Quan trọng: Tránh tạo stacking context quá cao gây lỗi cursor */
+  isolation: isolate; 
 }
 
-.card img {
+.prj-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(92, 107, 137, 0.12);
+  border-color: var(--accent);
+}
+
+/* Khu vực ảnh */
+.prj-img-box {
+  width: 100%;
+  height: 55%;
+  overflow: hidden;
+  position: relative;
+  /* Tránh bleed góc bo tròn trên Safari */
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
+}
+
+.prj-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 18px;
-  transition: transform 0.8s cubic-bezier(0.23, 1, 0.32, 1), opacity 0.6s ease;
-  will-change: transform, opacity;
+  transition: transform 0.6s ease;
 }
 
-.card-content {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  padding: 22px;
-  background: rgba(255, 255, 255, 0.9);
-  backdrop-filter: blur(10px);
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.6s cubic-bezier(0.25, 1, 0.3, 1);
-  border-radius: 0 0 18px 18px;
+.prj-card:hover .prj-img {
+  transform: scale(1.1);
 }
 
-.card-content h3 {
-  margin: 0 0 10px;
+/* Nội dung */
+.prj-content {
+  flex: 1;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.prj-title {
   font-size: 1.25rem;
-  font-weight: 600;
-  color: #222;
+  font-weight: 700;
+  color: var(--slate-800);
+  margin-bottom: 8px;
 }
 
-.card-content p {
-  font-size: 0.95rem;
-  color: #444;
-  line-height: 1.6;
-}
-
-.card:hover {
-  transform: translateY(-20px) rotateX(6deg) rotateY(-10deg) scale(1.04);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15);
-}
-
-.card:hover img {
-  transform: scale(1.12);
-  opacity: 0.6;
-}
-
-.card:hover .card-content {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.card,
-.card img,
-.card-content {
-  border-radius: 18px;
-}
-
-.card-content button {
-  margin-top: 10px;
-  padding: 10px 22px;
+.prj-desc {
   font-size: 0.9rem;
-  font-weight: 600;
-  border-radius: 999px;
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  background: rgba(255, 255, 255, 0.6);
-  backdrop-filter: blur(8px);
-  color: #111;
-  cursor: pointer;
-  transition: all 0.35s cubic-bezier(0.25, 1, 0.3, 1);
-  position: relative;
+  color: var(--slate-500);
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
   overflow: hidden;
-  right: -180px;
 }
 
-.card-content button:hover {
-  background: #111;
-  color: #fff;
-  border-color: #111;
-  transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+/* Nút bấm */
+.prj-btn {
+  margin-top: 16px;
+  padding: 12px;
+  background: var(--slate-100);
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  color: var(--slate-800);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.3s ease;
 }
 
-/* Click effect */
-.card-content button:active {
-  transform: scale(0.95);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+.prj-btn:hover {
+  background: var(--accent);
+  color: var(--white);
 }
 
-/* Shine animation */
-.card-content button::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -120%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    120deg,
-    transparent,
-    rgba(255, 255, 255, 0.5),
-    transparent
-  );
-  transition: all 0.6s ease;
-}
-
-.card-content button:hover::after {
-  left: 120%;
-}
+/* Reset các thuộc tính có thể gây mất con trỏ */
+.cursor-target {
+  /* Đảm bảo con trỏ chuột custom nhận diện được vùng này */
+  pointer-events: auto;
+  }

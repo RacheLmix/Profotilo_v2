@@ -1,0 +1,229 @@
+.github-container{
+  padding:80px 10%;
+  background:#f8fafc;
+}
+
+.github-title{
+  font-size:2rem;
+  font-weight:700;
+  margin-bottom:40px;
+  color:#1e293b;
+}
+
+/* grid layout */
+
+.repo-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  gap:40px;
+}
+
+/* CARD */
+
+.repo-card{
+
+  --radius:24px;
+  --accent:#5c6b89;
+
+  display:flex;
+  flex-direction:column;
+
+  padding:28px;
+
+  text-decoration:none;
+
+  background:#ffffff;
+  border-radius:var(--radius);
+
+  border:1px solid rgba(226,232,240,0.6);
+
+  box-shadow:0 10px 30px rgba(0,0,0,0.04);
+
+  transition:all .4s cubic-bezier(.25,.8,.25,1);
+
+  color:#1e293b;
+
+  min-height:200px;
+
+  position:relative;
+
+  overflow:hidden;
+
+  isolation:isolate;
+}
+
+.repo-card:hover{
+
+  transform:translateY(-8px);
+
+  box-shadow:0 20px 40px rgba(92,107,137,0.12);
+
+  border-color:var(--accent);
+
+}
+
+/* title */
+
+.repo-card h3{
+
+  font-size:1.25rem;
+
+  font-weight:700;
+
+  margin-bottom:8px;
+
+}
+
+/* description */
+
+.repo-card p{
+
+  font-size:.9rem;
+
+  color:#64748b;
+
+  line-height:1.5;
+
+  flex:1;
+
+  display:-webkit-box;
+  -webkit-line-clamp:3;
+  -webkit-box-orient:vertical;
+  overflow:hidden;
+
+}
+
+/* repo info */
+
+.repo-info{
+
+  margin-top:16px;
+
+  display:flex;
+
+  gap:16px;
+
+  font-size:.85rem;
+
+  font-weight:600;
+
+  color:#64748b;
+
+  transition:.3s;
+
+}
+
+/* hover effect info */
+
+.repo-card:hover .repo-info{
+
+  color:#5c6b89;
+
+}
+
+/* gradient border effect */
+
+.repo-card::before{
+
+  content:"";
+
+  position:absolute;
+
+  inset:0;
+
+  border-radius:var(--radius);
+
+  padding:1px;
+
+  background:linear-gradient(120deg,#5c6b89,transparent);
+
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+
+  -webkit-mask-composite:xor;
+
+  mask-composite:exclude;
+
+  opacity:0;
+
+  transition:.4s;
+
+  pointer-events:none;
+
+}
+
+.repo-card:hover::before{
+
+  opacity:1;
+
+}
+/* PAGINATION */
+
+.pagination{
+  margin-top:50px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:10px;
+}
+
+.pagination button{
+
+  padding:10px 16px;
+
+  border-radius:12px;
+
+  border:1px solid rgba(226,232,240,0.8);
+
+  background:#ffffff;
+
+  color:#1e293b;
+
+  font-weight:600;
+
+  cursor:pointer;
+
+  transition:all .25s ease;
+
+}
+
+/* hover */
+
+.pagination button:hover{
+
+  background:#5c6b89;
+
+  color:white;
+
+  border-color:#5c6b89;
+
+  transform:translateY(-2px);
+
+}
+
+/* active page */
+
+.active-page{
+
+  background:#5c6b89 !important;
+
+  color:white;
+
+  border-color:#5c6b89;
+
+  box-shadow:0 6px 14px rgba(92,107,137,0.25);
+
+}
+
+/* disabled button */
+
+.pagination button:disabled{
+
+  opacity:0.5;
+
+  cursor:not-allowed;
+
+  transform:none;
+
+}
