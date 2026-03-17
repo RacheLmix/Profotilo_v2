@@ -14,7 +14,7 @@ const MainProjects = () => {
   const [projects, Setprojects] = useState([])
   const fetchProjects = async() => {
     try {
-      const response = await api.get("/projects")
+      const response = await api.get("/api/projects")
       Setprojects(response.data)
     } catch (err) {
       console.log(err?.response?.data)
