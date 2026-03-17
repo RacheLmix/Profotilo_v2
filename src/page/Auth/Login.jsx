@@ -15,8 +15,8 @@ function Login() {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const res = await api.post("/api/auth/admin/login", data);
-      const user = await api.get("/api/auth/admin/me");
+      const res = await api.post("/auth/admin/login", data);
+      const user = await api.get("/auth/admin/me");
       if (user.data.role === "admin") {
         navigate("/admin/dashboard", { replace: true });
       }
