@@ -16,12 +16,13 @@ function Login() {
     e.preventDefault();
     try {
       const res = await api.post("api/auth/admin/login", data);
-      const user = await api.get("api/auth/admin/me");
-      if (user.data.role === "admin") {
-        navigate("/admin/dashboard", { replace: true });
-      }
+      setTimeout(async () => {
+        const user = await api.get("api/auth/admin/me");
+        if (user.data.role === "admin") {
+          navigate("/admin/dashboard", { replace: true });
+        }
+      }, 200);
     } catch (err) {
-      // console.log(err.response?.data?.message);
       sileo.error({
         title: "Failed Login",
         fill: "black",
