@@ -57,10 +57,10 @@ function Product() {
       }
 
       if (isEditing) {
-        await api.put(`/projects/product/${editId}`, formData);
+        await api.put(`api/projects/product/${editId}`, formData);
         sileo.success({ title: "Updated success" });
       } else {
-        await api.post("/projects/product", formData);
+        await api.post("api/projects/product", formData);
         sileo.success({ title: "Created success" });
       }
 
@@ -82,7 +82,7 @@ function Product() {
         title: "Delete",
         onClick: async () => {
           try {
-            const respones1 = await api.delete(`/projects/product/${id}`);
+            const respones1 = await api.delete(`api/projects/product/${id}`);
             sileo.success({ title: "Detele success" });
             fetchprojects(); // Refresh list after delete
           } catch (err) {
