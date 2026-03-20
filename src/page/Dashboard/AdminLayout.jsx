@@ -28,7 +28,7 @@ function AdminLayout() {
 
   const handleLogout = async () => {
     try {
-      await api.post("/auth/admin/logout");
+      await api.post("api/auth/admin/logout");
       navigate("/admin/login");
     } catch (err) { console.log(err); }
   };
