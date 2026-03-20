@@ -18,9 +18,9 @@ function Login() {
       const res = await api.post("api/auth/admin/login", data);
       setTimeout(async () => {
         const user = await api.get("api/auth/admin/me");
-        if (user.data.role === "admin") {
+        
           navigate("/admin/dashboard", { replace: true });
-        }
+        
       }, 200);
     } catch (err) {
       sileo.error({
