@@ -14,9 +14,9 @@ function AdminLayout() {
   const location = useLocation();
 
   useEffect(() => {
-    api.get("api/auth/admin/me")
-      .then((res) => setUser(res.data))
-      .catch((err) => console.log(err));
+    // api.get("api/auth/admin/me")
+    //   .then((res) => setUser(res.data))
+    //   .catch((err) => console.log(err));
 
     const timer = setInterval(() => setCurrentDate(new Date()), 1000);
     return () => clearInterval(timer);
