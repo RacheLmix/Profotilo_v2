@@ -19,7 +19,7 @@ function Product() {
   const [projects, Setprojects] = useState([]);
   const fetchprojects = async () => {
     try {
-      const respone = await api.get("/projects");
+      const respone = await api.get("api/projects");
       Setprojects(respone.data);
     } catch (err) {
       console.log(err.respone?.data);
@@ -121,8 +121,6 @@ function Product() {
       url_video: "",
     });
     setFile(null);
-    // Reset file input tag if we had access to the ref, 
-    // but the best way is usually letting user override or handle using controlled states
   };
 
   useEffect(() => {
