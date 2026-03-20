@@ -14,7 +14,7 @@ function AdminLayout() {
   const location = useLocation();
 
   useEffect(() => {
-    api.get("/auth/admin/me")
+    api.get("api/auth/admin/me")
       .then((res) => setUser(res.data))
       .catch((err) => console.log(err));
 
