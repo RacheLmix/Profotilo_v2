@@ -4,7 +4,7 @@ import "../styles/GithubProjects.css";
 const GithubProjects = () => {
   const [repos, setRepos] = useState([]);
 
-  const username = "RacheLmix";
+  const username = "0xcRachel";
 
   const [currentPage, setCurrentPage] = useState(1);
   const reposPerPage = 6;
